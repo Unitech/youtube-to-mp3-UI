@@ -1,0 +1,92 @@
+<html>
+  <head>
+    
+    <title>YouTube to mp3</title>
+    <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+    <script src="/file.js?file=app.js"> </script>
+    
+    <style>
+      body {
+      font:15px Trebuchet MS, Arial, Helvetica, Sans-Serif;
+
+      }
+      .utube {
+      border-top : 1px solid black;
+      }
+      .utube .left {
+      margin-top : 10px;
+      border-right : 1px solid black;
+      width :  50%;
+      height : 90%;
+      }
+      .utube .right {
+      margin-left : 10px;
+      position : absolute;
+      left : 50%;
+      width : 48%;
+      height : 80%;
+      }
+      
+      .utube .right .content {
+      border : 1px solid black;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      width : 100%;
+      max-height : 90%;
+      overflow-y : scroll;
+      }
+      
+      #down {
+      font-weight : bold;
+      margin-left : 10px;
+      }
+      
+      .author {
+
+      position : fixed;
+      right : 1%;
+      bottom : 1%;
+      font-size : 10px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <center><h1>YoutubeToMp3</h1></center>
+
+    <div class="utube">
+
+      <div class="right">
+	<h3>Fichiers déjà télèchargés</h3>
+	<div class="content">
+	  <ul>
+	    <% for (var i = 0; i < tmp.length; i++) { %>
+	    <li><a target="_blank" href="/download?filename=<%= tmp[i] %>"><%= tmp[i] %></a></li>
+            <% } %>
+          </ul> 
+       </div>
+      </div>
+
+      <div class="left">
+	<h3>Ici collez les liens de vos vidéos youtube</h3>
+	<div>
+	  <input type="button" id="add" value="Ajouter des champs de download"/>
+	</div>
+	<br/>
+	<br/>
+	<div id="listdown">
+	</div>
+      </div>
+
+
+      
+      <div class="author">
+	Technology used : <img src="http://www.tutorialized.com/upload/20110711102119_pic50.jpg"/> Powered<br/>
+	Alexandre Strzelewicz ®©
+      </div>
+
+      
+    </div>
+  </body>
+</html>
